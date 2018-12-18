@@ -1,2 +1,10 @@
 See the doc/html/index.html for the description of the Xerces-C++
 project and other documentation.
+
+To compile for Vita:
+```
+cmake -DCMAKE_TOOLCHAIN_FILE=$VITASDK/share/vita.toolchain.cmake -Dmutex-manager=nothreads -Dnetwork=OFF -Dsse2=OFF -Dthreads=OFF -DBUILD_SHARED_LIBS=OFF ../xerces-c-3.2.0/
+
+make -j10
+make install -j10
+```
